@@ -79,9 +79,12 @@ warning " > react-native@0.62.1" has unmet peer dependency "react@16.11.0".
 ```
 
 - Resolved all warnings by running these commands
-> $ yarn add core-js@3
-> $ yarn add @babel/core@*
-> $ yarn add react@16.11.0
+    > $ yarn add core-js@3
+    
+    > $ yarn add @babel/core@*
+    
+    > $ yarn add react@16.11.0
+
 
   Commit: https://github.com/oreyes598/YARNAppIssue/commit/e8a487ed5e82c4cf5936b670ded63974ba6ab5b0
 
@@ -104,7 +107,7 @@ warning " > react-native@0.62.1" has unmet peer dependency "react@16.11.0".
 - Now ready to run the application. Start Metro server
 > yarn start
 
-- In Android Studio, ran the app and clicked the button to start the MyReactActivity but encountered this crash. Also attempted to start the app just using 'npx react-native run-android' and the same issue.
+- **ISSUE #1**: In Android Studio, ran the app and clicked the button to start the MyReactActivity but encountered this crash. Also attempted to start the app just using 'npx react-native run-android' and the same issue.
 
 ```
 2020-04-03 14:44:55.688 3337-3438/com.yarn.appissue D/SoLoader: About to load: libhermes.so
@@ -128,7 +131,7 @@ warning " > react-native@0.62.1" has unmet peer dependency "react@16.11.0".
         at java.lang.Thread.run(Thread.java:919)
 ```
 
-- Updated root project gradle.build and app gradle.build to add android-jsc support and that stopped the crash above from happening but getting new crash now.
+- **ISSUE #2**: Updated root project gradle.build and app gradle.build to add android-jsc support and that stopped the crash above from happening but getting new crash now.
 
   Commit: https://github.com/oreyes598/YARNAppIssue/commit/511754990215d73745915897e111c124627cee5e
 
@@ -155,13 +158,13 @@ warning " > react-native@0.62.1" has unmet peer dependency "react@16.11.0".
 
 - NOTE: Metro server is running and even accessible in browser http://localhost:8081/. Getting "React Native packager is running." message when loaded in the browser.
 
-- After several Google search for this issue and not able to find solutio I ended up not relying on Metro server to get JavaScript code so just added it to the Android project. Ran the command below to bundle the JavaScript code to Android project.
+- After several Google search for this issue and not able to find solution I ended up not relying on Metro server to get JavaScript code so just added it to the Android project. Ran the command below to bundle the JavaScript code to Android project.
 
 >npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
 
   Commit: https://github.com/oreyes598/YARNAppIssue/commit/9dab535e63756ddbb1e1c236c0a4542ab71a4adb
 
-- Ran the app and clicking the button to start the MyReactActivity crashed
+- **ISSUE #3**: Ran the app and clicking the button to start the MyReactActivity crashed
 
 ```
 2020-04-03 15:13:47.016 4850-4914/com.yarn.appissue W/unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
