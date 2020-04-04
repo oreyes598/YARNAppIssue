@@ -59,7 +59,7 @@ Now on to the details and braise yourself for this long sequence of steps. I tri
 
   Commit: https://github.com/oreyes598/YARNAppIssue/commit/89d6d9f46e1c5e9fb2f1ce93b4caa621671f4380
 
-- Add react-native by running the command in the terminal
+- Added react-native by running the command in the terminal
 > yarn add react-native
 
 - See all these warning
@@ -104,7 +104,7 @@ warning " > react-native@0.62.1" has unmet peer dependency "react@16.11.0".
 
   Commit: https://github.com/oreyes598/YARNAppIssue/commit/9d41ac099a2b5d50bd5080c703cf23013c7d844c
 
-- Now ready to run the application. Start Metro server
+- Now ready to run the application. Started Metro server
 > yarn start
 
 - **ISSUE #1**: In Android Studio, ran the app and clicked the button to start the MyReactActivity but encountered this crash. Also attempted to start the app just using 'npx react-native run-android' and the same issue.
@@ -158,7 +158,7 @@ warning " > react-native@0.62.1" has unmet peer dependency "react@16.11.0".
 
 - NOTE: Metro server is running and even accessible in browser http://localhost:8081/. Getting "React Native packager is running." message when loaded in the browser.
 
-- After several Google search for this issue and not able to find solution I ended up not relying on Metro server to get JavaScript code so just added it to the Android project. Ran the command below to bundle the JavaScript code to Android project.
+- After several search for this issue and not able to find solution I ended up not relying on Metro server to get JavaScript code so just added it to the Android project. Ran the command below to bundle the JavaScript code to Android project.
 
 >npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
 
